@@ -7,7 +7,7 @@ const MAX_INTERVAL_MS = 30000
 
 async function fetchIssNow() {
   const start = performance.now()
-  const res = await fetch('http://api.open-notify.org/iss-now.json')
+  const res = await fetch('/api/iss-now')
   if (!res.ok) throw new Error(`ISS API error: ${res.status}`)
   const json = await res.json()
   const latencyMs = performance.now() - start
